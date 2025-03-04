@@ -5,3 +5,4 @@ redis
 celery
 sqlalchemy
 psycopg2
+twilio
