@@ -13,7 +13,7 @@ Base.metadata.create_all(bind=engine)
 
 @app.get("/")
 def read_root():
-    return {"message": "API funcionando!"}
+    return {"message": "API rodando no Railway!"}
 
 # Inicializar FastAPI
 app = FastAPI()
