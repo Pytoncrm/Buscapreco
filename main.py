@@ -1,13 +1,15 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI
+from app.database import engine, Base
 from sqlalchemy.orm import Session
 from celery import Celery
 import requests, os
 from twilio.rest import Client
 from database import SessionLocal, engine, Base
 from models import Product
-from fastapi import FastAPI
 
-app = FastAPI()  # <- Isso precisa estar no código
+
+app = FastAPI()  
+Base.metadata.create_all(bind=engine)
 
 @app.get("/")
 def read_root():
